@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommonApis } from '../commonClass/commonApi';
-import {ToastrService} from 'ngx-toastr';
+// import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-profile-update',
