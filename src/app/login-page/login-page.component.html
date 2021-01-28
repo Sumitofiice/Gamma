@@ -1,0 +1,24 @@
+<div style="min-height: 100vh;
+display: flex;
+align-items: center">
+    <form style="width: 30%;margin: auto;" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+        <div class="container ">
+            <label for="uname" style="margin-left: 3rem;"><b>Username</b></label><br>
+            <input type="text" style="margin-left: 3rem;" placeholder="Enter Username" name="uname" formControlName="firstName" (ngModelChange)="onChange($event)" required><br>
+
+            <label for="psw" style="margin-left: 3rem;"><b>Password</b></label><br>
+            <input type="password" style="margin-left: 3rem;" placeholder="Enter Password" name="psw" formControlName="lastName" required>
+            <span class="psw" >Create <a (click)="routeClick('profile')" >profile</a></span>
+            <button type="submit">Login</button>
+            <label>
+    <!-- <input type="checkbox" checked="checked" name="remember"> Remember me -->
+  </label>
+        </div>
+        <!-- 
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div> -->
+    </form>
+</div>

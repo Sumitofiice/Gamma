@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <div class="jumbotron">
+        <h2>Update Profile</h2>
+        <form name="form" [formGroup]="form" (ngSubmit)=" onSubmit()">
+          <div class="form-group">
+            <label for="firstName"> Company name</label>
+            <input type="text"  class="form-control" [(ngModel)]="valuedata.company_name" formControlName="company_name" />
+            
+          </div>
+          <div class="form-group">
+            <label for="lastName">Description</label>
+            <input type="text" class="form-control" [(ngModel)]="valuedata.description"  formControlName="description" />
+            
+          </div>
+          <div class="form-group">
+            <label for="lastName">Location</label>
+            <input type="text" class="form-control" [(ngModel)]="valuedata.location"  formControlName="location" />
+            
+          </div>
+          <div class="form-group">
+            <label for="lastName">Start Date</label>
+            <input type="text" class="form-control" [(ngModel)]="valuedata.start_date"  formControlName="start_date" />
+            
+          </div>
+          <div class="form-group">
+            <label for="lastName">Title</label>
+            <input type="text" class="form-control" [(ngModel)]="valuedata.title"  formControlName="title" />
+            
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary"  [disabled]="!form.valid">Submit</button>
+            <button class="btn btn-primary" (click)="routeClick('')" >Back</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

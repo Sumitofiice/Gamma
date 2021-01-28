@@ -1,0 +1,23 @@
+<div style="display: flex; flex-direction: column; align-items: center;">
+    <form style="margin: auto;" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+        <div class="container ">
+            <input class="form-control input-panel mt-4" type="text" style="margin-left: 3rem;" placeholder="Course Name" name="courseName" formControlName="courseName" required><br>
+
+            <!-- <input class="form-control input-panel mt-4" type="text" style="margin-left: 3rem;" placeholder="Course Tag" name="ctag" formControlName="ctag" required><br> -->
+            <tag-input class=" mt-4" style="margin-left: 3rem;" placeholder="Course Tag" name="tags" formControlName="tags" [(ngModel)]="items" [modelAsStrings]="true">
+            </tag-input>
+            <input class="form-control input-panel mt-4" type="text" style="margin-left: 3rem;height: 5rem;" placeholder="Course Descrption" name="description" formControlName="description" required><br>
+
+            <input class="form-control input-panel mt-4" type="number" style="margin-left: 3rem;" placeholder="Course Price" name="coursePrice" formControlName="coursePrice" required><br>
+            <button type="button" class="btn btn-danger" (click)="close()" style="float: right;">close</button>
+            <button type="submit" class="btn btn-success" style="float: right;">Add</button>
+            <label>
+</label>
+            <!-- </div>
+        <div class="container"> -->
+
+        </div>
+
+    </form>
+</div>

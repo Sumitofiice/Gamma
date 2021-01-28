@@ -1,0 +1,64 @@
+<div>
+
+
+</div>
+<div class="header">
+    <a href="#default" class="logo">Course Content</a>
+    <!-- <div class="header-right">
+        <a class="active" href="#home">Home</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div> -->
+    <div class="active">
+        <mat-form-field fxFlex="40%" style="margin-left: 16vw;">
+            <input matInput type="text" class="form-control" (keyup)="doFilter($event.target.value)" placeholder="Search">
+        </mat-form-field>
+        <button type="button" class="btn btn-primary" style="float: right;" (click)="logOut()">logout</button>
+        <i class="fa fa-plus" style="font-size:48px;color:green;float: right;cursor: pointer;margin-right: 2vw;" (click)="openBottomSheet()"></i>
+
+    </div>
+</div>
+
+<div *ngIf="datalength>0">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="courseName">
+            <th mat-header-cell *matHeaderCellDef> NAME </th>
+            <td mat-cell *matCellDef="let element"> {{element.courseName}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="tags">
+            <th mat-header-cell *matHeaderCellDef> TAGS </th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-button *matCellDef="let element">{{element.tags}}</button></td>
+
+        </ng-container>
+        <!-- <ng-container matColumnDef="tags">
+            <mat-header-cell *matHeaderCellDef> TAGS </mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <button mat-button>{{row}}</button>
+            </mat-cell>
+        </ng-container> -->
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef> DESCRIPTION </th>
+            <td mat-cell *matCellDef="let element" [innerHtml]="getInnerHtml(element)"> {{element.description}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="coursePrice">
+            <th mat-header-cell *matHeaderCellDef> COURSE PRICE </th>
+            <td mat-cell *matCellDef="let element"> {{element.coursePrice}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
